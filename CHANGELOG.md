@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/JhonDevS/back-app/compare/v1.1.0...v1.2.0) (2025-01-15)
+
+
+### Features
+
+* integrate login with supabase ([460ad3c](https://github.com/JhonDevS/back-app/commit/460ad3c9c6f7d796509aa71975de36ce6683983f))
+
 ## 1.1.0 (2024-12-25)
 
 
