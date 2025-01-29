@@ -1,27 +1,21 @@
-import supabase from '../config/database/supabase';
+//import supabase from '../config/database/supabase';
+import jwt from 'jsonwebtoken';
+const secretKey = 'secret_key';
 
 // TODO: Create interface for user
 const validateToken = async (req: any, res: any, next: any) => {
   try {
-    const athHeader = req.headers.authorization;
+    const token = req.headers.authorization;
 
-    if (!athHeader) {
+    if (!token) {
       return res.status(401).json({ error: 'Token not provided' });
     }
 
-    const token = athHeader.split(' ')[1];
-
-    const { data, error } = await supabase.auth.getUser(token);
-
-    if (error || !data) {
-      return res.status(401).json({ error: 'Token invalid' });
-    }
-
-    req.user = data;
-
-    return next();
+    const decoded = jwt.verify(token, secretKey);
+    req.user = decoded;
+    next();
   } catch (error) {
-    return res.status(401).json({ error});
+    return res.status(401).json({ error });
   }
 };
 

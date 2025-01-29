@@ -7,5 +7,6 @@ export const config = {
   port: env.PORT || 8002,
   env: env.NODE_ENV || 'development',
   urlSupaBase: env.SUPABASE_URL || '',
-  keySupaBase: env.supabaseKey || ''
+  keySupaBase: env.supabaseKey || '',
+  secret: env.SECRET_KEY || ''
 };

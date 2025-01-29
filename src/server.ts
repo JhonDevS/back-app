@@ -11,7 +11,7 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin: '*', // Permite solicitudes de cualquier origen (no recomendado en producción)
+    origin: '*',
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization']
   })
